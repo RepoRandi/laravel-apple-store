@@ -45,7 +45,7 @@ class ProductController extends Controller
         $product->category_id = $request->category_id;
         if ($request->hasFile('image')) {
             $filename = time() . '.' . $request->image->extension();
-            $request->image->storeAs('public/categories', $filename);
+            $request->image->storeAs('public/products', $filename);
             $product->image = $filename;
         }
         $product->save();
