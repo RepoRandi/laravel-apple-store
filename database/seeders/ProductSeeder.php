@@ -20,6 +20,7 @@ class ProductSeeder extends Seeder
             'image' => 'm3.jpg',
             'price' => 25000000,
             'stock' => 10,
+            'weight' => 500,
             'is_available' => true,
             'category_id' => 5,
         ]);
