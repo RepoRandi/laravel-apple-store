@@ -15,8 +15,13 @@ class Product extends Model
         'image',
         'price',
         'stock',
+        'weight',
         'is_available',
         'category_id',
+    ];
+
+    protected $casts = [
+        'weight' => 'decimal:1',
     ];
 
     public function category()

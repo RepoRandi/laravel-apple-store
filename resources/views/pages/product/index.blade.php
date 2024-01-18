@@ -57,6 +57,7 @@
                                         <th>Category</th>
                                         <th>Price</th>
                                         <th>Stock</th>
+                                        <th>Weight</th>
                                         <th>Image</th>
                                         <th>Created At</th>
                                         <th>Updated At</th>
@@ -68,6 +69,7 @@
                                         <td>{{ $product->category->name }}
                                         <td>{{ $product->price }}</td>
                                         <td>{{ $product->stock }}</td>
+                                        <td>{{ $product->weight }}</td>
                                         <td>
                                             @if ($product->image)
                                             <img src="{{ asset('storage/products/' . $product->image) }}" alt="Product Image" width="100">

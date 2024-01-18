@@ -7,6 +7,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
+use Ramsey\Uuid\Type\Decimal;
 
 class ProductController extends Controller
 {
@@ -33,6 +34,7 @@ class ProductController extends Controller
             'name' => 'required|string|max:255',
             'price' => 'required|numeric',
             'stock' => 'required|integer',
+            'weight' => 'required|numeric|min:0.1',
             'category_id' => 'required|exists:categories,id',
             'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
@@ -42,6 +44,7 @@ class ProductController extends Controller
         $product->description = $request->description;
         $product->price = (int) $request->price;
         $product->stock = (int) $request->stock;
+        $product->weight = $request->weight;
         $product->category_id = $request->category_id;
         if ($request->hasFile('image')) {
             $filename = time() . '.' . $request->image->extension();
@@ -71,6 +74,7 @@ class ProductController extends Controller
             'name' => 'string|max:255',
             'price' => 'numeric',
             'stock' => 'integer',
+            'weight' => 'numeric|min:0.1',
             'category_id' => 'exists:categories,id',
             'image' => 'image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);

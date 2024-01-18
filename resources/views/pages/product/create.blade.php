@@ -80,6 +80,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label>Weight (gram)</label>
+                            <input type="number" class="form-control @error('weight') is-invalid @enderror" name="weight" step="0.1">
+                            @error('weight')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+
+                        <div class="form-group">
                             <label class="form-label">Category</label>
                             <select class="form-control selectric @error('category_id') is-invalid @enderror" name="category_id">
                                 <option value="">-- Select Category --</option>

@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->integer('price');
             $table->integer('stock');
-            $table->decimal('weight', 5, 1);
             $table->boolean('is_available')->default(true);
             $table->timestamps();
         });
