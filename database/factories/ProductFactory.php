@@ -22,6 +22,7 @@ class ProductFactory extends Factory
             'image' => fake()->imageUrl(),
             'price' => fake()->randomNumber(4),
             'stock' => fake()->randomNumber(2),
+            'weight' => fake()->randomNumber(3),
             'is_available' => true,
             'category_id' => fake()->numberBetween(1, 5),
         ];

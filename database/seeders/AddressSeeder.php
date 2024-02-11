@@ -12,8 +12,6 @@ class AddressSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Address::factory()
-            ->count(10)
-            ->create();
+        \App\Models\Address::factory(10)->create();
     }
 }

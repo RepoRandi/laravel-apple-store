@@ -17,16 +17,17 @@ class AddressFactory extends Factory
     public function definition(): array
     {
         return [
-            'name' => $this->faker->name,
-            'full_address' => $this->faker->address,
-            'phone' => $this->faker->phone,
-            'prov_id' => $this->faker->numberBetween(1, 34),
-            'city_id' => $this->faker->numberBetween(1, 100),
-            'district_id' => $this->faker->numberBetween(1, 100),
-            'village' => $this->faker->village,
-            'postal_code' => $this->faker->postcode,
-            'user_id' => $this->faker->numberBetween(1, 20),
-            'is_default' => $this->faker->boolean,
+            'name' => fake()->name,
+            'full_address' => fake()->address,
+            'phone' =>
+            fake()->phoneNumber(),
+            'prov_id' => fake()->numberBetween(1, 34),
+            'city_id' => fake()->numberBetween(1, 100),
+            'district_id' => fake()->numberBetween(1, 100),
+            'village' => fake()->city,
+            'postal_code' => fake()->postcode,
+            'user_id' => fake()->numberBetween(1, 11),
+            'is_default' => fake()->boolean,
         ];
     }
 }
