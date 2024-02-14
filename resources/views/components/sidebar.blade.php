@@ -118,6 +118,14 @@
                     </li>
                 </ul>
             </li>
+            <li class="nav-item dropdown {{ $type_menu === 'order' ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown"><i class="fas fa-book"></i> <span>Order</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::is('order-activities') ? 'active' : '' }}">
+                        <a class="beep beep-sidebar" href="{{ route('order.index') }}">All Orders</a>
+                    </li>
+                </ul>
+            </li>
             <li class="nav-item dropdown {{ $type_menu === 'utilities' ? 'active' : '' }}">
                 <a href="#" class="nav-link has-dropdown"><i class="fas fa-ellipsis-h"></i>
                     <span>Utilities</span></a>
