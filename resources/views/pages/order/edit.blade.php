@@ -36,13 +36,6 @@
                     </div>
                     <div class="card-body">
                         <div class="form-group">
-                            <label>Shipping Resi</label>
-                            <input type="text" class="form-control @error('shipping_resi') is-invalid @enderror" name="shipping_resi" step="0.1" value="{{ $order->shipping_resi }}">
-                            @error('shipping_resi')
-                            <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-                        <div class="form-group">
                             <label class="form-label">Status</label>
                             <select class="form-control selectric @error('status') is-invalid @enderror" name="status">
                                 <option value="pending" {{ $order->status == 'pending' ? 'selected' : '' }}>Pending
@@ -57,6 +50,13 @@
                                 <option value="cancelled" {{ $order->status == 'cancelled' ? 'selected' : '' }}>Failed
                                 </option>
                             </select>
+                        </div>
+                        <div class="form-group">
+                            <label>Shipping Resi</label>
+                            <input type="text" class="form-control @error('shipping_resi') is-invalid @enderror" name="shipping_resi" step="0.1" value="{{ $order->shipping_resi }}">
+                            @error('shipping_resi')
+                            <div class="invalid-feedback">{{ $message }}</div>
+                            @enderror
                         </div>
                     </div>
                     <div class="card-footer text-right">
