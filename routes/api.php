@@ -40,3 +40,5 @@ Route::apiResource('addresses', AddressController::class)->middleware('auth:sanc
 Route::post('/order', [OrderController::class, 'order'])->middleware('auth:sanctum');
 
 Route::post('/callback', [CallbackController::class, 'callback']);
+
+Route::get('/order/status/{id}', [OrderController::class, 'checkStatusOrder'])->middleware('auth:sanctum');

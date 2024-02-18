@@ -49,7 +49,7 @@ class CreateVAService extends Midtrans
                     'first_name' => $this->order->user->name,
                     'phone' => $this->order->user->phone,
                     'email' => $this->order->user->email,
-                    'address' => $this->order->user->address->full_address
+                    'address' => $this->order->user->address
                 ],
                 'bank_transfer' => [
                     'bank' => $this->order->payment_va_name,
